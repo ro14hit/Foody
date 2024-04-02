@@ -1,8 +1,10 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import dotenv from "dotenv/config";
+import dotenv from "dotenv";
 import mongoose from "mongoose";
 
+dotenv.config();
+console.log("Heptic",process.env.MONGODB_CONNECTION_STRING)
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
   .then(() => console.log("Connected to database!"))
